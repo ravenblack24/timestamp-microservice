@@ -1,7 +1,15 @@
 
 # API Project: Timestamp Microservice
 
-### User stories:
+## Table of contents
+* [User stories](#user-stories)
+* [Example usage](#example-usage)
+* [Example output](#example-output)
+* [Technologies](#technologies)
+* [Status](#status)
+* [Contact](#contact)
+
+## User stories:
 
 1. The API endpoint is `GET [project_url]/api/timestamp/:date_string?`
 2. A date string is valid if can be successfully parsed by `new Date(date_string)` (JS) . Note that the unix timestamp needs to be an **integer** (not a string) specifying **milliseconds**. In our test we will use date strings compliant with ISO-8601 (e.g. `"2016-11-20"`) because this will ensure an UTC timestamp.
@@ -11,10 +19,19 @@
 e.g. `{"unix": 1479663089000 ,"utc": "Sun, 20 Nov 2016 17:31:29 GMT"}`.
 5. If the date string is **invalid** the api returns a JSON having the structure `{"error" : "Invalid Date" }`.
 
-#### Example usage:
+## Example usage:
 See: https://timestamp-microservice-challenge.ravenblack24.repl.co/
 
 **Please note**: there may be a short delay while the repl.it app starts up.  If nothing happens or you get an error, wait a few seconds and try again.
 
-#### Example output:
+## Example output:
 * {"unix":1451001600000, "utc":"Fri, 25 Dec 2015 00:00:00 GMT"}
+
+## Technologies
+* express.js, node.js, html, css
+
+## Status
+Project is complete and an [interactive demo is available here](https://timestamp-microservice-challenge.ravenblack24.repl.co/).
+
+## Contact
+Created by [Kay Pea](https://imkp.co.uk) - feel free to contact me!
