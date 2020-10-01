@@ -1,59 +1,35 @@
-// server.js
-// where node app starts
+// Init project
+const express = require('express');
+const app = express();
+const timestamp = require('./src/api/Timestamp/index');
 
-// init project
-var express = require('express');
-var app = express();
-
-// enable CORS (https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)
-// so that API is remotely testable by FCC 
-var cors = require('cors');
-app.use(cors({optionsSuccessStatus: 200}));  // some legacy browsers choke on 204
-
-// http://expressjs.com/en/starter/static-files.html
+// Serve static resources from public dir
 app.use(express.static('public'));
 
-// http://expressjs.com/en/starter/basic-routing.html
+// Route for index page
 app.get("/", function (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
-// Handle timestamp request with no date_time parameter specified
+/**
+ * Route for current date timestamp request
+ * 
+ * @returns {String} json response
+ */
 app.get("/api/timestamp/", (req, res) => {
-
-  // Return current timestamp
-  const date = new Date();
-  res.json({"unix": date.getTime(), "utc": date.toUTCString()});
-
+  res.json(timestamp.currentTimeStamp());
 });
 
+/** 
+ * Route for timestamp request with parameter
+ * 
+ * @returns {String} json response
+ */
 app.get("/api/timestamp/:date_string", (req, res) => {
-
-  // Parse date_string parameter
-  const dateString = req.params.date_string;
-
-  // If first 5 characters are numbers, treat as unix timestamp
-  if(/^\d{5,}/.test(dateString)) {
-    // return unix timestamp as is, convert to int to use with toUTCString method
-    res.json({"unix": dateString, "utc": new Date(parseInt(dateString)).toUTCString()});
-  }
-
-  // Convert input to Date 
-  const date = new Date(dateString);
-  // Convert Date to milliseconds
-  const dateInMilliseconds = date.getTime();
-
-  // If dateInMilliseconds is NaN, return Invalid Date response
-  if (!dateInMilliseconds) {
-    res.json({"error": "Invalid Date"});
-  }
-
-  // Return unix milliseconds and utc formatted date
-  res.json({"unix": dateInMilliseconds, "utc": date.toUTCString()});
-
+  res.json(timestamp.processTimeStampRequest(req.params.date_string));
 });
 
-// listen for requests
+// Listen for requests
 var listener = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
 });
