@@ -12,7 +12,7 @@ e.g. `{"unix": 1479663089000 ,"utc": "Sun, 20 Nov 2016 17:31:29 GMT"}`.
 5. If the date string is **invalid** the api returns a JSON having the structure `{"error" : "Invalid Date" }`.
 
 #### Example usage:
-See: [https://timestamp-microservice-challenge.ravenblack24.repl.co/]
+See: https://timestamp-microservice-challenge.ravenblack24.repl.co/
 
 **Please note**: there may be a short delay while the repl.it app starts up.  If nothing happens or you get an error, wait a few seconds and try again.
 
