@@ -14,7 +14,7 @@ app.get("/", function (req, res) {
 /**
  * Route for current date timestamp request
  * 
- * @returns {String} json response
+ * @returns {String} JSON response
  */
 app.get("/api/timestamp/", (req, res) => {
   res.json(timestamp.currentTimeStamp());
