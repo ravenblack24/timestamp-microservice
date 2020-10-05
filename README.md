@@ -14,7 +14,7 @@
 ## Status
 Project is complete and an [interactive demo is available here](https://timestamp-microservice-challenge.ravenblack24.repl.co/).
 
-**NOTE: repl.it projects quite often go to sleep**, if the link doesn't work - download the code and run locally.
+**NOTE: repl.it projects quite often go to sleep**, if the link doesn't work - download the code and run locally, or just check out the [screenshots](#screenshots) below.
 
 ## User stories:
 
