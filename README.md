@@ -38,7 +38,7 @@ See: https://timestamp-microservice-challenge.ravenblack24.repl.co/
 * express.js, node.js, html, css
 
 ## Screenshots
-![index.html](https://raw.githubusercontent.com/ravenblack24/timestamp-microservice/master/public/indexapi.png)
+![index.html](https://raw.githubusercontent.com/ravenblack24/timestamp-microservice/master/public/tindex.png)
 ![api responses](https://raw.githubusercontent.com/ravenblack24/timestamp-microservice/master/public/tapi.png)
 
 ## Contact
